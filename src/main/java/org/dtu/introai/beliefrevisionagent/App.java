@@ -1,4 +1,4 @@
-package org.dtu.introai;
+package org.dtu.introai.beliefrevisionagent;
 
 /**
  * Hello world!

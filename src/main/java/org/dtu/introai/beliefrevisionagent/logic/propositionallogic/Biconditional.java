@@ -22,4 +22,16 @@ public class Biconditional extends Formula {
     public String toString(){
         return "(" + left.toString() + " IFF " + right.toString() + ")";
     }
+
+    @Override
+    public boolean equals(Object o){
+        // TODO
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        // TODO
+        return 0;
+    }
 }

@@ -22,4 +22,16 @@ public class Disjunction extends Formula{
     public String toString(){
         return "(" + left.toString() + " OR " + right.toString() + ")";
     }
+
+    @Override
+    public boolean equals(Object o){
+        // TODO
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        // TODO
+        return 0;
+    }
 }

@@ -22,4 +22,16 @@ public class Conjunction extends Formula{
     public String toString(){
         return "(" + left.toString() + " AND " + right.toString() + ")";
     }
+
+    @Override
+    public boolean equals(Object o){
+        // TODO
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        // TODO
+        return 0;
+    }
 }

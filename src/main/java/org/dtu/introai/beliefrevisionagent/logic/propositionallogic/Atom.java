@@ -16,4 +16,16 @@ public class Atom extends Formula{
     public String toString(){
         return name;
     }
+
+    @Override
+    public boolean equals(Object o){
+        // TODO
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        // TODO
+        return 0;
+    }
 }

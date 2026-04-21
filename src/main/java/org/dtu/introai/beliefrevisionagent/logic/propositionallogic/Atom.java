@@ -19,13 +19,12 @@ public class Atom extends Formula{
 
     @Override
     public boolean equals(Object o){
-        // TODO
-        return false;
+        if(!(o instanceof Atom)) return false;
+        return toString().equals(((Atom) o).name);
     }
 
     @Override
     public int hashCode(){
-        // TODO
-        return 0;
+        return toString().hashCode();
     }
 }

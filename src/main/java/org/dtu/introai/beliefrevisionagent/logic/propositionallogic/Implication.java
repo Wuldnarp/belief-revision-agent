@@ -25,13 +25,12 @@ public class Implication extends Formula{
 
     @Override
     public boolean equals(Object o){
-        // TODO
-        return false;
+        if(!(o instanceof Implication)) return false;
+        return toString().equals(o.toString());
     }
 
     @Override
     public int hashCode(){
-        // TODO
-        return 0;
+        return toString().hashCode();
     }
 }

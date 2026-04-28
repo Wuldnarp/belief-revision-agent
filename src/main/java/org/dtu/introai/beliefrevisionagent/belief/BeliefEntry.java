@@ -27,4 +27,15 @@ public class BeliefEntry {
         // TODO
         return "";
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(!(o instanceof BeliefEntry)) return false;
+        return this.formula.equals(((BeliefEntry) o).getFormula());
+    }
+
+    @Override
+    public int hashCode() {
+        return formula.hashCode();
+    }
 }

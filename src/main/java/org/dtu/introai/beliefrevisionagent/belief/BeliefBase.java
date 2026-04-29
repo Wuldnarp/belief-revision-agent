@@ -1,42 +1,56 @@
 package org.dtu.introai.beliefrevisionagent.belief;
 
 import org.dtu.introai.beliefrevisionagent.api.CNF;
+import org.dtu.introai.beliefrevisionagent.logic.CNFConverter;
 import org.dtu.introai.beliefrevisionagent.logic.propositionallogic.Formula;
+import org.dtu.introai.beliefrevisionagent.logic.propositionallogic.Negation;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class BeliefBase {
 
     private List<BeliefEntry> entries;
 
     public BeliefBase(){
+        this.entries = new ArrayList<>();
+    }
 
-    }
     public List<BeliefEntry> getEntries(){
-        // TODO
-        return List.of();
+        return entries;
     }
+
     public void setEntries(List<BeliefEntry> entries){
-        // TODO
+        this.entries = entries;
     }
+
     public void expand(Formula formula, int priority){
-        // TODO
+        entries.add(new BeliefEntry(formula, priority));
     }
+
     public BeliefBase contract(Formula formula){
-        // TODO
-        return null;
+        return Contraction.contract(this, formula);
     }
+
     public BeliefBase revise(Formula formula, int priority){
-        // TODO
-        return null;
+        Formula negation = new Negation(formula);
+        BeliefBase contracted = this.contract(negation);
+        contracted.expand(formula, priority);
+        return contracted;
     }
-    public CNF toCNF(){
-        // TODO
-        return null;
+
+    public CNF toCNF() {
+        CNF result = new CNF(Set.of());
+        for (BeliefEntry entry : entries) {
+            CNF entryCNF = CNFConverter.convert(entry.getFormula());
+            result = result.merge(entryCNF);
+        }
+        return result;
     }
+
     @Override
     public String toString(){
-        // TODO
-        return "";
+        return "BeliefBase: " + entries.toString();
     }
 }

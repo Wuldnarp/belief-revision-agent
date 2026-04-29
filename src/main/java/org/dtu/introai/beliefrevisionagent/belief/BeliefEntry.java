@@ -13,19 +13,17 @@ public class BeliefEntry {
     }
 
     public Formula getFormula(){
-        // TODO
-        return null;
+        return this.formula;
     }
 
     public int getPriority(){
-        // TODO
-        return 0;
+        return this.priority;
+
     }
 
     @Override
     public String toString(){
-        // TODO
-        return "";
+        return formula + " with priority " + priority;
     }
 
     @Override

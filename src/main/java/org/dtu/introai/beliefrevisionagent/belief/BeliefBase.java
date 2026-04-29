@@ -5,6 +5,7 @@ import org.dtu.introai.beliefrevisionagent.logic.CNFConverter;
 import org.dtu.introai.beliefrevisionagent.logic.propositionallogic.Formula;
 import org.dtu.introai.beliefrevisionagent.logic.propositionallogic.Negation;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -13,7 +14,7 @@ public class BeliefBase {
     private List<BeliefEntry> entries;
 
     public BeliefBase(){
-
+        this.entries = new ArrayList<>();
     }
 
     public List<BeliefEntry> getEntries(){
@@ -50,7 +51,6 @@ public class BeliefBase {
 
     @Override
     public String toString(){
-        // TODO
-        return "";
+        return "BeliefBase: " + entries.toString();
     }
 }

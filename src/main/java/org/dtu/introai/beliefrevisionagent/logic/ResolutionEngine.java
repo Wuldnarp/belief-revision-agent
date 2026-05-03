@@ -32,7 +32,7 @@ public class ResolutionEngine {
                         continue;
                     } else if (resolvent.isEmpty()) {
                         return false; 
-                    } else {
+                    } else if (!clauses.contains(resolvent)) {
                         newClauses.add(resolvent);
                     }
                 }

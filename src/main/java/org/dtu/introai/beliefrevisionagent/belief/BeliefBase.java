@@ -33,6 +33,7 @@ public class BeliefBase {
         return Contraction.contract(this, formula);
     }
 
+    // Revise the formular with using the Levi Identity.
     public BeliefBase revise(Formula formula, int priority){
         Formula negation = new Negation(formula);
         BeliefBase contracted = this.contract(negation);
@@ -40,6 +41,7 @@ public class BeliefBase {
         return contracted;
     }
 
+    // Converts into CNF using De Morgan's law 
     public CNF toCNF() {
         CNF result = new CNF(Set.of());
         for (BeliefEntry entry : entries) {
